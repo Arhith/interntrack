@@ -1,0 +1,92 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f8f9fc;
+  --bg2: #ffffff;
+  --border: #e5e7eb;
+  --text: #111827;
+  --text2: #6b7280;
+  --text3: #9ca3af;
+  --accent: #4f6bed;
+  --accent-light: #eef1fd;
+  --accent-dark: #3b5adc;
+  --success: #22c55e;
+  --success-light: #f0fdf4;
+  --warn: #f59e0b;
+  --warn-light: #fffbeb;
+  --danger: #ef4444;
+  --danger-light: #fef2f2;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+body { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text); background: var(--bg); line-height: 1.5; }
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+input, select, textarea { font-family: inherit; font-size: 14px; }
+
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg2); color: var(--text); font-size: 13px; font-weight: 500; transition: background .12s; }
+.btn:hover { background: var(--bg); }
+.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-primary:hover { background: var(--accent-dark); }
+.btn-sm { padding: 4px 10px; font-size: 12px; }
+.btn-danger { background: var(--danger); color: #fff; border-color: var(--danger); }
+
+input[type=text], input[type=email], input[type=password], input[type=date], select, textarea {
+  width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg2); color: var(--text); outline: none; transition: border-color .15s;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+textarea { resize: vertical; min-height: 80px; }
+
+.tag { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 500; }
+.tag-todo { background: #f3f4f6; color: #6b7280; }
+.tag-in-progress { background: var(--accent-light); color: var(--accent-dark); }
+.tag-in-review { background: var(--warn-light); color: #92400e; }
+.tag-done { background: var(--success-light); color: #166534; }
+.tag-blocked { background: var(--danger-light); color: #991b1b; }
+
+.avatar { display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 500; flex-shrink: 0; }
+.av-0 { background: #eef1fd; color: #3b4fbd; }
+.av-1 { background: #e1f5ee; color: #0f6e56; }
+.av-2 { background: #faece7; color: #993c1d; }
+.av-3 { background: #eeedfe; color: #3c3489; }
+.av-4 { background: #faeeda; color: #854f0b; }
+.av-5 { background: #fbeaf0; color: #993556; }
+
+.progress-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 3px; background: var(--accent); transition: width .3s; }
+.progress-fill.green { background: var(--success); }
+.progress-fill.amber { background: var(--warn); }
+
+.dept-badge { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 500; }
+.dept-Engineering { background: #eef1fd; color: #3b4fbd; }
+.dept-Design { background: #fbeaf0; color: #993556; }
+.dept-Data { background: #e1f5ee; color: #0f6e56; }
+.dept-Marketing { background: #faeeda; color: #854f0b; }
+.dept-Operations { background: #eeedfe; color: #3c3489; }
+.dept-All { background: #f3f4f6; color: #6b7280; }
+
+.flex { display: flex; align-items: center; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.sb { justify-content: space-between; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+
+.metric { background: #f8f9fc; border-radius: var(--radius); padding: 1rem; }
+.metric-label { font-size: 12px; color: var(--text2); margin-bottom: 4px; }
+.metric-val { font-size: 22px; font-weight: 600; }
+
+.form-row { margin-bottom: 1rem; }
+.form-label { display: block; font-size: 12px; color: var(--text2); margin-bottom: 4px; font-weight: 500; }
+
+.empty { text-align: center; padding: 3rem; color: var(--text3); font-size: 13px; }
+
+@media (max-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
